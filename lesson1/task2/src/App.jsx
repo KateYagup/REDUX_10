@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Header from './Header';
-import { users } from './user-context';
+import { UserDataContext } from './user-context';
 
 
 class App extends React.Component {
@@ -14,7 +14,9 @@ class App extends React.Component {
 
     render() {
         return <div className='page'>
-            <Header value={this.constex.state.user} />
+            <UserDataContext value={this.state.user}>
+                <Header />
+            </UserDataContext>
         </div>
     }
 };
