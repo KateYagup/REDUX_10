@@ -3,12 +3,12 @@ import { createStore } from 'redux';
 const INCREMENT = 'COUNTER/INCREMENT';
 const DICREMENT = 'COUNTER/DICREMENT';
 
-const incrementActionCreator = () => {
+const increment = () => {
     return {
         type: INCREMENT
     }
 }
-const decrementActionCreator = () => {
+const decrement = () => {
     return {
         type: DICREMENT,
     }
@@ -25,11 +25,4 @@ const counterReducer = (state = 15, action) => {
     }
 }
 
-console.log('store');
 const store = createStore(counterReducer);
-console.log(store);
-store.dispatch(incrementActionCreator());
-store.dispatch(incrementActionCreator());
-store.dispatch(incrementActionCreator());
-store.dispatch(decrementActionCreator());
-alert(store.getState());
