@@ -30,7 +30,7 @@ export const counterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 value: state.value + 1,
-                history: state.history.concat(1)
+                history: state.history.concat('+1')
             };
         case DECREMENT:
             return {
