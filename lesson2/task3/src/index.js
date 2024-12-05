@@ -1,5 +1,8 @@
+//html и scss скопировать из task2 чтобы все заработало
+
 import './index.scss';
-import store, { increment, decrement, reset, addUser, deleteUser } from './store';
+import { addUser, deleteUser } from './users.actions.js';
+import store from './store.js';
 
 const resultElem = document.querySelector('.counter__result');
 const incrementBtn = document.querySelector('[data-action="increment"]');
@@ -7,12 +10,14 @@ const resetBtn = document.querySelector('[data-action ="reset"]');
 const decrementBtn = document.querySelector('[data-action="decrement"]');
 
 const onIncrement = () => {
-    store.dispatch(addUser());
-    console.log(store.getState());
+    store.dispatch(addUser({ id: 76, name: 'Sarah' }));
+    // console.log(store.getState());
 }
 
+
 const onDecrement = () => {
-    store.dispatch(deleteUser());
+    store.dispatch(deleteUser(76));
+    // alert('!!!')
 }
 
 // const onReset = () => {
@@ -24,12 +29,5 @@ decrementBtn.addEventListener('click', onDecrement);
 // resetBtn.addEventListener('click', onReset);
 
 store.subscribe(() => {
-    // const state = store.getState();
-    // const currentValue = state.history.reduce((acc, value) => acc + value, 0);
-    // const historyString = state.history.join(' ');
-
-    // resultElem.textContent = state.history.length === 0
-    //     ? ''
-    //     : `${historyString} = ${currentValue}`;
     console.log(store.getState());
 })
