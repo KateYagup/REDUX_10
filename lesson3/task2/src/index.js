@@ -1,8 +1,7 @@
-// import store from './c';
-import { increment, decrement } from './counter.actions';
+import { increment, decrement } from './counter';
 import store from './counter';
 
-// store.subscribe(() => console.log(store.getState()));
+store.subscribe(() => console.log(store.getState()));
 
 store.dispatch(increment());
 store.dispatch(decrement());
