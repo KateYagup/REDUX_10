@@ -23,7 +23,7 @@ const usersReducer = (state = initialState, action) => {
         case UPDATE_USER: {
             const newList = state.usersList
                 .map(user => {
-                    if (user.id !== action.payload.userId) {
+                    if (user.id === action.payload.userId) {
                         return {
                             ...user,
                             ...action.payload.userData,
