@@ -1,3 +1,5 @@
+import { createStore } from 'redux';
+
 export const INCREMENT = 'COUNTER/INCREMENT';
 export const DECREMENT = 'COUNTER/DECREMENT';
 
@@ -22,3 +24,9 @@ export const counterReducer = (state = 0, action) => {
             return state;
     }
 };
+const store = createStore(
+    counterReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+export default store;

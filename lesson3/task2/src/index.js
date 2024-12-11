@@ -1,5 +1,5 @@
-import store from './store';
-import { increment, decrement } from './counter';
+// import store from './c';
+import store, { increment, decrement } from './counter';
 
 // store.subscribe(() => console.log(store.getState()));
 
