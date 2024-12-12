@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import usersReducer from './users.reducer';
+import usersReducer from './user.reducer';
 import { languageReducer } from './language.reducer';
 import { cartReducer } from './cart.reducer';
 
