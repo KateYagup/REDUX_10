@@ -4,7 +4,7 @@ import { languageReducer } from './language.reducer';
 import { cartReducer } from './cart.reducer';
 
 const appReducer = combineReducers({
-    users: usersReducer,
+    user: usersReducer,
     language: languageReducer,
     cart: cartReducer
 })
