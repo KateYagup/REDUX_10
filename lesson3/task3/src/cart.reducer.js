@@ -13,7 +13,7 @@ export const cartReducer = (state = initialState, action) => {
             }
         case REMOVE_PRODUCT:
             const newList = products
-                .filter(cart => cart.id !== action.payload.cartData);
+                .filter(cart => cart.id !== state.products.cartData);
             return {
                 ...state,
                 products: newList
