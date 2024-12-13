@@ -11,13 +11,14 @@ export const cartReducer = (state = initialState, action) => {
                 ...state,
                 products: state.products.concat(action.payload.cartData)
             }
-        case REMOVE_PRODUCT:
+        case REMOVE_PRODUCT: {
             const newList = state.products
                 .filter(cart => cart.id !== action.payload.cartId);
             return {
                 ...state,
                 products: newList
             }
+        }
         default:
             return state;
     }
