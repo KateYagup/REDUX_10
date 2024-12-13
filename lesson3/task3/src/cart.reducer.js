@@ -12,8 +12,8 @@ export const cartReducer = (state = initialState, action) => {
                 products: state.products.concat(action.payload.cartData)
             }
         case REMOVE_PRODUCT:
-            const newList = products
-                .filter(cart => cart.id !== state.products.cartData);
+            const newList = state.products
+                .filter(cart => cart.id !== action.payload.cartId);
             return {
                 ...state,
                 products: newList
