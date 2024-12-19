@@ -13,14 +13,23 @@ class Users extends Component {
     }
 
     render() {
-        const { users } = this.props;
+        const { users, deleteUser } = this.props;
+
         console.log(this.props);
         return (
             <div className="users" >
                 <button onClick={this.onUserCreate} className="users__create-btn">Create user</button>
                 <ul className="users__list">
                     {users.map(user => (
-                        <li className="users__list-item">{user.name}</li>
+                        <li key={user.id} className="users__list-item">
+                            {user.name}
+                            <button
+                                onCick={() => deleteUser(user.id)}
+                                className="users__delete-btn"
+                            >
+                                +
+                            </button>
+                        </li>
                     ))}
                 </ul>
             </div>
@@ -35,7 +44,8 @@ const mapState = state => {
 }
 
 const mapDispatch = {
-    createUsers: userActions.addUser,
+    createUser: userActions.addUser,
+    deleteUser: userActions.deleteUser
 }
 
 const connector = connect(mapState, mapDispatch);
