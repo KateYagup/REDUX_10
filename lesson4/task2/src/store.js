@@ -5,7 +5,7 @@ import { useReducer } from 'react';
 
 const reducer = combineReducers({
     users: usersReducer,
-    counter: counterReducer,
+    // counter: counterReducer,
 })
 
 const store = createStore(
