@@ -14,8 +14,9 @@ class Users extends Component {
 
     render() {
         const { users, deleteUser } = this.props;
-
+        console.log('this.props');
         console.log(this.props);
+        console.log(this.props.users);
         return (
             <div className="users" >
                 <button onClick={this.onUserCreate} className="users__create-btn">Create user</button>
@@ -48,8 +49,10 @@ const mapDispatch = {
     deleteUser: userActions.deleteUser
 }
 
-const connector = connect(mapState, mapDispatch);
+// const connector = connect(mapState, mapDispatch);
 
-const ConnectedUsers = connector(Users);
+// const ConnectedUsers = connector(Users);
 
-export default Users;
+// export default Users;
+
+export default connect(mapState, mapDispatch)(Users);
