@@ -25,7 +25,7 @@ class Users extends Component {
                         <li key={user.id} className="users__list-item">
                             {user.name}
                             <button
-                                onClick={() => deleteUser(user.id)}
+                                onCick={() => deleteUser(user.id)}
                                 className="users__delete-btn"
                             >
                                 +
