@@ -1,53 +1,45 @@
 import React, { Component } from 'react';
 import User from './User';
-import { users } from './users';
 import { connect } from 'react-redux';
 import Pagination from './Pagination';
 import * as userActions from './users.actions';
 
-// import * as counterActions from './counter/counter.actions';
-
 class UsersList extends Component {
 
     render() {
-        const { currentPage, increment, decrement } = this.props;
-        // console.log(users);
-        const page = 3;
-        const min = (page - 1) * 3;
-        const max = page * 3 - 1;
-        const namesOnPage = users.slice(min, max + 1);
-        // const currentPage = page;
-        // const currentPage = 2;
-
-        const names = namesOnPage.map(user => (
+        const { currentPage, users, goPrev, goNext, totalPages } = this.props;
+        const names = users.map(user => (
             <User key={user.id} name={user.name} age={user.age} />
         ))
-
 
         return (
             <ul className="users">
                 <Pagination
                     currentPage={currentPage}
-                    increment={increment}
-                    decrement={decrement}
+                    goNext={goNext}
+                    goPrev={goPrev}
+                    totalPages={totalPages}
                 />
                 {names}
-
-
             </ul>
         )
     }
 }
 
 const mapSate = state => {
+    console.log('state');
+    console.log(state.totalPages);
     return {
-        currentPage: state.users.currentPage,
+        currentPage: state.currentPage,
+        users: state.usersList,
+        totalPages: state.totalPages
+        // totalPages: 4
     }
 }
 
 const mapDispatch = {
-    increment: userActions.increment,
-    decrement: userActions.decrement,
+    goNext: userActions.goNext,
+    goPrev: userActions.goPrev,
 }
 
 

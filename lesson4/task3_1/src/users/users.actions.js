@@ -1,12 +1,12 @@
 export const INCREMENT = 'USERS/INCREMENT';
 export const DECREMENT = 'USERS/DECREMENT';
 
-export const increment = () => {
+export const goNext = () => {
     return {
         type: INCREMENT,
     }
 }
-export const decrement = () => {
+export const goPrev = () => {
     return {
         type: DECREMENT,
     }
