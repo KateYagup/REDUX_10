@@ -1,12 +1,11 @@
 import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, goNext, goPrev }) => {
-    let isPrevPageAvailable = true;
-    let isNextPageAvailable = false;
-    if (currentPage === 0) isPrevPageAvailable = true
-    else isPrevPageAvailable = false;
-    if (currentPage === totalPages - 1) isNextPageAvailable = true
-    else isNextPageAvailable = false;
+    const isPrevPageAvailable = (currentPage === 0)
+        ? true : false;
+
+    const isNextPageAvailable = (currentPage === totalPages - 1)
+        ? true : false;
 
     return (
         < div className="pagination" >
@@ -17,7 +16,9 @@ const Pagination = ({ currentPage, totalPages, goNext, goPrev }) => {
             >
                 {!isPrevPageAvailable && '←'}
             </button>
-            < span className="pagination__page" > {currentPage + 1}</span >
+            < span className="pagination__page" >
+                {currentPage + 1}
+            </span >
             <button
                 className="btn"
                 onClick={goNext}
