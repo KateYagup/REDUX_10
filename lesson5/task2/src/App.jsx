@@ -6,9 +6,9 @@ import store from './store';
 const App = () => {
     return (
         <div>
-            <Provider store={store}>
-                <TransferList />
-            </Provider>
+            {/* <Provider store={store}> */}
+            <TransferList />
+            {/* </Provider> */}
         </div >
     )
 }
