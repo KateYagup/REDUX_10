@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { availableOptionsSelector } from './options.selectors';
+import { selectedOptionsSelector } from './options.selectors';
 import Options from './Options';
 import { toggleOption } from './options.actions';
 
-const mapState = state => {
+const mapSate = state => {
     return {
-        options: availableOptionsSelector(state),
+        options: selectedOptionsSelector(state),
     }
 }
 
@@ -13,4 +13,4 @@ const mapDispatch = {
     moveOption: toggleOption,
 }
 
-export default connect(mapState, mapDispatch)(Options);
+export default connect(mapSate, mapDispatch)(Options);
