@@ -17,7 +17,7 @@ const UserInfo = ({ userData, isFetching }) => {
             <img
                 alt="User Avantar"
                 src={userData.avatar_url}
-                className='user_avatar'
+                className='user__avatar'
             />
             <div className="user__info">
                 <span className="user__name">{userData.name}</span>
@@ -57,7 +57,7 @@ export default connect(mapState)(UserInfo);
 //             <img
 //                 alt="User Avantar"
 //                 src={userData.avatar_url}
-//                 className='user_avatar'
+//                 className=''
 //             />
 //             <div class="user__info">
 //                 <span class="user__name">Apple</span>

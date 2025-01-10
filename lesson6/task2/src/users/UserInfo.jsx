@@ -15,7 +15,7 @@ const UserInfo = ({ userData, isFetching }) => {
             <img
                 alt="User Avantar"
                 src={userData.avatar_url}
-                className='user_avatar'
+                className='user__avatar'
             />
             <div class="user__info">
                 <span class="user__name">Apple</span>
