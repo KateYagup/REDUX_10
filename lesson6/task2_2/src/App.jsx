@@ -12,7 +12,6 @@ const App = () => {
             <div className="page">
                 <UserInfo />
                 <SearchField />
-                {/* <Spinner /> */}
             </div>
         </Provider>
     );
