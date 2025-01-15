@@ -1,22 +1,29 @@
 import React, { Component } from "react";
 import TasksList from './TasksList';
 import CreateTaskInput from './CreateTaskInput';
+import { getTasksList } from './tasksGateway';
 
 const baseUrl = 'https://6786b272f80b78923aa7e205.mockapi.io/api/v1/tasks';
 
 
 class TodoList extends Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         tasks: [],
+    //     }
+    // }
+
+    state = {
+        tasks: []
+    }
 
     componentDidMount() {
         this.fetchTasksList();
     }
 
     fetchTasksList = () => {
-        fetch(baseUrl).then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-        })
+        getTasksList()
             .then(tasksList => {
                 this.setState({
                     tasks: tasksList,
@@ -85,14 +92,14 @@ class TodoList extends Component {
         return (
             <>
                 <h1 className='title'>Todo list</h1>
-                {/* <main className="todo-list">
+                <main className="todo-list">
                     <CreateTaskInput onCreate={this.onCreate} />
                     <TasksList
                         tasks={this.state.tasks}
                         handleTaskStatusChange={this.handleTaskStatusChange}
                         handleTaskDelete={this.handleTaskDelete}
                     />
-                </main > */}
+                </main >
             </>
         )
     }
