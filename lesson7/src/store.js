@@ -4,7 +4,7 @@ import tasksReducer from './tasks/tasks.reducer';
 
 
 const reducer = combineReducers({
-    task: tasksReducer,
+    tasks: tasksReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
